@@ -1,0 +1,64 @@
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+	#text {
+		top: calc(50% - 250px);
+	}
+
+	#text h1 {
+		font-size: 144pt;
+	}
+}
+
+@media screen and (max-width: 767px) and (min-width: 640px) {
+	#text {
+		top: calc(50% - 200px);
+	}
+
+	#text h1 {
+		font-size: 120pt;
+	}
+
+	#text p {
+		font-size: 28pt;
+	}
+
+	#text #mapBtn {
+		font-size: 20pt;
+	}
+
+}
+
+@media screen and (max-width: 639px) and (min-width: 425px) {
+	#text {
+		top: calc(50% - 150px);
+	}
+
+	#text h1 {
+		font-size: 76pt;
+	}
+
+	#text p {
+		font-size: 20pt;
+	}
+
+	#text #mapBtn {
+		font-size: 16pt;
+	}
+}
+
+@media screen and (max-width: 424px) {
+	#text {
+		top: calc(50% - 121px);
+	}
+
+	#text h1 {
+		font-size: 56pt;
+	}
+
+	#text p {
+		font-size: 18pt;
+	}
+
+	#text #mapBtn {
+		font-size: 14pt;
+	}
+}
