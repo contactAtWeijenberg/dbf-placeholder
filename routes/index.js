@@ -6,7 +6,7 @@ var mailCred = require('../config/keys_mail.js');
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
 	service: "Godaddy",
-	host: "email.secureserver.net",
+	host: "smtp.secureserver.net",
     port: 587,
 	secure: false,
     auth: {
