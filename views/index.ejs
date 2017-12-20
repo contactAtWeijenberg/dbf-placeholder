@@ -37,7 +37,8 @@
             </div>
             <div class="modal-body">
                 <form id="contactForm">
-                    <div class="red" id="error"></div>
+                    <div class="red hidden" id="error">We'd love to hear from you, but there was an error sending your message :( 
+                      <br/>Please send your message to hello@digitalbluefoam.com instead.</div>
                     <div class="field">
                         <input name="name" id="name" type="text" placeholder="Your Name" autocapitalize />
                     </div>
@@ -67,7 +68,6 @@
         </div>
       </div>
 
-
       <script>
         // wait for the DOM to be loaded
         $(function() {
@@ -81,6 +81,8 @@
                  
                 $("#contactModal").modal('hide');
                 $("#successModal").modal('show');
+              }, error: function(xhr, ajaxOptions, thrownError) {
+                $("#error").removeClass('hidden');
               }
             });
 

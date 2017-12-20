@@ -54,6 +54,14 @@ select {
 	color: #FF1F3E;
 }
 
+.red {
+	color: red;
+}
+
+.hidden {
+	display: none;
+}
+
 #wrapper, #background, #bg-overlay {
 	position: absolute;
 	top: 0;

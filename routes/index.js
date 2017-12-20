@@ -13,7 +13,10 @@ let transporter = nodemailer.createTransport({
         user: mailCred.email, // 
         pass: mailCred.password  // 
     },
-    debug: true
+    debug: true,
+    connectionTimeout: 6000,
+    greetingTimeout: 6000,
+    socketTimeout: 6000
 });
 
 // setup email data with unicode symbols
@@ -42,6 +45,7 @@ router.post('/', function(req, res, next) {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error(error);
+            next(error);
         } else {
         	res.send(info);
         }
