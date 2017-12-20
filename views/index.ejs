@@ -68,21 +68,48 @@
         </div>
       </div>
 
+      <div id="sendingModal" class="modal fade" data-backdrop="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h4>Sending message<span id="dots"></span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <script>
         // wait for the DOM to be loaded
         $(function() {
           $("#contactForm").on('submit', function(e){
             e.preventDefault();
+            $("#sendingModal").modal('show');
+            $("#contactModal").css('z-index', '1000');
+            // dot dot dot animation
+            var dotSpan = document.getElementById('dots')
+            var dots = 0
+            setInterval(function() {
+              if (dots < 3) {
+                dotSpan.innerHTML += '.'
+                dots += 1;
+              } else {
+                dotSpan.innerHTML = ''
+                dots = 0
+              }
+            }, 500);
+
             $.ajax({
               type: "POST",
               url: '/',
               data: $("#contactForm").serialize(), // serializes the form's elements.
               success: function(){
-                 
+                $("#sendingModal").modal('hide');
                 $("#contactModal").modal('hide');
                 $("#successModal").modal('show');
               }, error: function(xhr, ajaxOptions, thrownError) {
+                $("#sendingModal").modal('hide');
                 $("#error").removeClass('hidden');
+                $("#contactModal").css('z-index', '1050');
               }
             });
 

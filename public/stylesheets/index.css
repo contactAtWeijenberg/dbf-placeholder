@@ -268,6 +268,7 @@ textarea:focus {
 	outline-color: #0c7b88;
 }
 
-#successModal .modal-dialog {
+#successModal .modal-dialog,
+#sendingModal .modal-dialog {
 	top: calc(50% - 50px);
 }
